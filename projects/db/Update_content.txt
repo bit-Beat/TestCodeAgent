@@ -1,0 +1,14 @@
+1-12 [AutoDumping] 신규 EngtFoup과 구 EngtFoup 구분을 위한 속성 관리
+
+system : smartMES
+process : WIP
+ClientSource : -
+ServerSource : CreateCarrier.java
+
+1. 내용 : 신규 EngtFoup과 구 EngtFoup 구분을 위해 EngtFoup 신규 생성 시 구분자 정보를 ATTR 테이블에 추가/수정/삭제를 통해 속성 정보 관리, Type:Engineer, SubType:NEW_ENGT_FOUP 관리 코드(ENUM)이면 생성 시 BIZ_DURABLEATTR_DET에 추가
+
+2. 패치항목 : CreateCarrier.java
+
+3. UI : N/A
+
+3. flag 정보 : FabUseYN > AD_20250827_NewEngtFoupAttributeManage

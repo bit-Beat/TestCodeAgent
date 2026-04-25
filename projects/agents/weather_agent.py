@@ -1,8 +1,5 @@
-from langchain_openai  import AzureChatOpenAI
 
 from tools.weather_tools import get_weather_data, analyze_weather, forecast_weather
-
-from utils.config_loader import load_config
 from utils.common_method import log, pretty_trace
 
 weather_agent = {
