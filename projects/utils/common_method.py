@@ -1,5 +1,14 @@
+from pathlib import Path
 
 """ 공통 함수 """
+
+def read_text_with_fallback(path: Path) -> str:
+    for encoding in ("utf-8", "cp949", "euc-kr"):
+        try:
+            return path.read_text(encoding=encoding)
+        except UnicodeDecodeError:
+            continue
+    return path.read_text()
 
 def log(message: str, level: str = "PRINT") -> None:
     """사용자 입력 로그 출력 함수"""
@@ -24,11 +33,11 @@ def pretty_trace(message):
     step = 1
 
     if not isinstance(message, dict):
-        WARNING_MESSAGE("Not Dict Type!")
+        log("Not Dict Type!", "warning")
         return 
 
     if "messages" not in message.keys():
-        WARNING_MESSAGE("DeepAgent 메시지 결과 값 전달 바랍니다.")
+        log("DeepAgent 메시지 결과 값 전달 바랍니다.", "warning")
         return
 
     messages = message['messages']
