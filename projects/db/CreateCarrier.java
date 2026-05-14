@@ -1,5 +1,3 @@
-package com.hynix.smartmes.biz.wip.r3.durable.command;
-
 public class CreateCarrier extends AbstractTransactionCaller {
 
 	private final Transaction txn;
